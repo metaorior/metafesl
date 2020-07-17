@@ -37,7 +37,7 @@ func main() {
 		config.Config.PrivateKeyPath,
 	)
 
-	zerolog.Print("Http api listenting for magma requests")
+	zerolog.Print("HttpServer ready for magma requests")
 	<-ctx.Done()
 }
 
