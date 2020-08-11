@@ -22,15 +22,15 @@ func main() {
 	startConfig()
 	startLogger()
 
-	//Background means it will always stay on this go-routine
+	//Background means it will always stay running on this go-routine
 	ctx := context.Background()
 
-	sv, err := server.New()
+	srv, err := server.New()
 	if err != nil {
 		zerolog.Print("fatal error with http-api setup", err)
 	}
 
-	sv.ListenAndServe(
+	srv.ListenAndServe(
 		config.Config.HTTPBind,
 		config.Config.HTTPSBind,
 		config.Config.CertificatePath,
