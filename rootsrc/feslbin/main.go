@@ -1,7 +1,7 @@
 package main 
 // Generate setters and getters for stats
 // $ go generate ./cmd/goheroes
-//go:generate go run ../stats-codegen/main.go -scan ../../backend/model --getters ../../backend/ranking/getters.go --setters ../../backend/ranking/setters.go --adders ../../backend/ranking/adders.go
+//go:generate go run ../stats-codegen/main.go -scan ../../model --getters ../../ranking/getters.go --setters ../../ranking/setters.go --adders ../../ranking/adders.go
 
 
 // import is like #include or #import from python
@@ -15,13 +15,13 @@ import (
 	"github.com/subosito/gotenv"
 
 
-	"github.com/metaorior/metafesl/backend/config"
-	"github.com/metaorior/metafesl/backend/network"
-	"github.com/metaorior/metafesl/backend/fesl"
-	"github.com/metaorior/metafesl/backend/matchmaking"
-	"github.com/metaorior/metafesl/backend/storage/database"
-	"github.com/metaorior/metafesl/backend/storage/kvstore"
-	"github.com/metaorior/metafesl/backend/theater"
+	"github.com/metaorior/metafesl/config"
+	"github.com/metaorior/metafesl/fesl/network"
+	"github.com/metaorior/metafesl/fesl"
+	"github.com/metaorior/metafesl/fesl/matchmaking"
+	"github.com/metaorior/metafesl/fesl/storage/database"
+	"github.com/metaorior/metafesl/fesl/storage/kvstore"
+	"github.com/metaorior/metafesl/fesl/theater"
 
 )
 
