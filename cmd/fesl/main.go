@@ -69,10 +69,10 @@ func startFeslServer(ctx context.Context) {
 	kvs := kvstore.NewInMemory()
 	mm := matchmaking.NewPool()
 
-	fesl.New(config.feslCli(), false, db, mm).ListenAndServe(ctx)
-	fesl.New(config.feslServ(), true, db, mm).ListenAndServe(ctx)
+	fesl.New(config.FeslCli(), false, db, mm).ListenAndServe(ctx)
+	fesl.New(config.FeslServ(), true, db, mm).ListenAndServe(ctx)
 
 	
-	theater.New(config.thtrCli(), db, kvs, mm).ListenAndServe(ctx)
-	theater.New(config.thtrServ(), db, kvs, mm).ListenAndServe(ctx)
+	theater.New(config.ThtrCli(), db, kvs, mm).ListenAndServe(ctx)
+	theater.New(config.ThtrServ(), db, kvs, mm).ListenAndServe(ctx)
 }
